@@ -1,0 +1,7 @@
+/*IE私有属性，补充对CSS3的支持*/
+.c-table-header{
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000,endColorstr=#66000000);
+	zoom: 1;
+}
+.c-table-main{background:transparent;zoom: 1;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);}

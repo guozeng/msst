@@ -1,0 +1,301 @@
+/**
+ * 样式基础
+ * reset 标签重置
+ * base  常用样式
+ */
+/* body,dl,dd,h1,h2,h3,h4,h5,h6,p,form,ul,ol{margin:0;}
+ul,ol,td,th{padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display: block;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+ul,ol{list-style:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+fieldset,img{border:0;}
+img,object{vertical-align:middle;border:0;}
+table{border-collapse:collapse;border-spacing:0;}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1458019707_483356.eot'); IE9
+  src: url('//at.alicdn.com/t/font_1458019707_483356.eot?#iefix') format('embedded-opentype'), IE6-IE8
+  url('//at.alicdn.com/t/font_1458019707_483356.woff') format('woff'), chrome、firefox
+  url('//at.alicdn.com/t/font_1458019707_483356.ttf') format('truetype'), chrome、firefox、opera、Safari, Android, iOS 4.2+
+  url('//at.alicdn.com/t/font_1458019707_483356.svg#iconfont') format('svg'); iOS 4.1-
+}
+.iconfont{font-family:"iconfont";font-size:16px;font-style:normal;} */
+/**
+ * 还原编辑器内容标签默认样式
+ */
+.g-ur ul,.g-ur ol {padding-left:40px;}
+.g-ur ul{list-style:disc}
+.g-ur ol{list-style:decimal}
+.g-ur img{max-width:100%;_display:none}
+.g-ur table{table-layout:fixed;border-collapse:separate;border-spacing:2px}
+.g-ur td{white-space:normal;word-wrap:break-word;word-break:break-all}
+
+/**
+ * 定位
+ */
+.g-pr{position:relative}
+.g-pa{position:absolute}
+.g-pa0{position:absolute;left:0;top:0}
+.g-pf{position: fixed;}
+.g-z1{z-index: 1}
+.g-z2{z-index: 2}
+.g-z99{z-index: 99}
+.g-z100{z-index: 100}
+.g-z999{z-index: 999}
+/**
+ * 显示
+ */
+.g-dn{display:none}
+.g-db{display:block}
+.g-di{display:inline}
+.g-dib{display:inline-block;*display:inline;*zoom:1}
+.g-vh{visibility:hidden}
+
+/* 鼠标状态 */
+.g-curp{cursor: pointer;}
+.g-curm{cursor: move;}
+.g-curd{cursor: default;}
+.g-curn{cursor: not-allowed;}
+
+/**
+ * 清除活动 .g-cf
+ * 全局容器 .g-o
+ */
+.g-cf,.g-o,.g-w{*zoom:1}
+.g-cf:after,.g-o:after,.g-w:after{display:block;visibility:hidden;clear:both;height:0;content:'\20'}
+.g-o{width:1000px;margin:0 auto}
+/**
+ * 浮动
+ */
+.g-fl{float:left}
+.g-fr{float:right}
+
+/* 行距 */
+.g-lh0{line-height: 0}
+.g-lh150{line-height:150%}
+.g-lh180{line-height:180%}
+.g-lh200{line-height:200%}
+
+/**
+ * 高度填充
+ */
+.g-h0{height:0;line-height:0}
+.g-h1{height:1px}
+.g-h5{height:5px}
+.g-h10{height:10px}
+.g-h15{height:15px}
+.g-h20{height:20px}
+.g-h25{height:25px}
+.g-h30{height:30px}
+.g-h0,.g-h1,.g-h5,.g-h10,.g-h15,.g-h20,.g-h25,.g-h30{clear:both;overflow:hidden}
+
+/*width*/
+.g-w10{width:10px}
+.g-w15{width:15px}
+.g-w20{width:20px}
+.g-w30{width:30px}
+.g-w40{width:40px}
+.g-w50{width:50px}
+.g-w60{width:60px}
+.g-w70{width:70px}
+.g-w80{width:80px}
+.g-w90{width:90px}
+.g-w100{width:100px}
+.g-w200{width:200px}
+.g-w250{width:250px}
+.g-w300{width:300px}
+.g-w400{width:400px}
+.g-w500{width:500px}
+.g-w600{width:600px}
+.g-w700{width:700px}
+.g-w800{width:800px}
+.g-w980{width:980px}
+.g-wall{width:100%}
+.g-pw10{width:10%;}
+.g-pw15{width:15%;}
+.g-pw20{width:20%;}
+.g-pw25{width:25%;}
+.g-pw30{width:30%;}
+.g-pw33{width:33.3%;}
+.g-pw40{width:40%;}
+.g-pw50{width:50%;}
+.g-pw60{width:60%;}
+.g-pw66{width:66.6%;}
+.g-pw70{width:70%;}
+.g-pw75{width:75%;}
+.g-pw80{width:80%;}
+.g-pw90{width:90%;}
+
+/**
+ * 文本对齐
+ */
+.g-tl{text-align:left}
+.g-tc{text-align:center}
+.g-tr{text-align:right}
+
+/**
+ * 字体大小
+ */
+.g-fs12{font-size:12px}
+.g-fs14{font-size:14px}
+.g-fs16{font-size:16px}
+.g-fs18{font-size:18px}
+.g-fs20{font-size:20px}
+.g-fs22{font-size:22px}
+.g-fs24{font-size:24px}
+.g-fs26{font-size:26px}
+.g-fs28{font-size:28px}
+.g-fs30{font-size:30px}
+.g-fs32{font-size:32px}
+.g-fs34{font-size:34px}
+.g-fs36{font-size:36px}
+.g-fs38{font-size:38px}
+.g-fs40{font-size:40px}
+
+/**
+ * 字体宽度
+ */
+.g-fwb{font-weight:700}
+.g-fwn{font-weight:400}
+
+/**
+ * 字体
+ */
+.g-ffs{font-family:simsun}
+.g-ffh{font-family:simhei}
+.g-ffy{font-family:Microsoft YaHei}
+
+
+/**
+ * 图片垂直居中
+ */
+.g-ivm .i{display:table-cell;vertical-align:middle;font-family:simsun;text-align:center;*display:block;*font-family:Arial;*zoom:1;overflow:hidden;}
+.g-ivm .i img{_position:relative;_top:-1px;vertical-align:middle}
+.g-ivm .ibox{text-align:center}
+
+/**
+ * 内容显示控制
+ * .g-e  显示省略号(包含不换行)
+ * .g-b  换行
+ * .g-ub 不换行
+ */
+.g-e{overflow:hidden;-ms-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;}
+.g-b{word-wrap:break-word;word-break:break-all}
+.g-ub{white-space:nowrap;word-wrap:normal}
+
+/**
+  *.g-w 1190px 全局宽度 水平居中
+*/
+.g-w{width:1190px;margin:0 auto;}
+
+/**
+ * 字体颜色
+ */
+.g-cred{color:red;}
+.g-cblue{color:#2664a2;}
+.g-corg{color:#f77301;}
+.g-c4{color:#444;}
+.g-c5{color:#555;}
+.g-c6{color:#666;}
+.g-c8{color:#888;}
+.g-c9{color:#999;}
+.g-c0{color:#000;}
+.g-ca{color:#aaa;}
+
+/**
+ * 1px灰色边框
+ */
+.g-bd0{border:none!important;}
+.g-bd{border:1px solid #ccc;}
+.g-bld{border-left:1px solid #ccc;}
+.g-brd{border-right:1px solid #ccc;}
+.g-btd{border-top:1px solid #ccc;}
+.g-bbd{border-bottom:1px solid #ccc;}
+
+/**
+ * 外边距
+ */
+.g-m0{margin:0;}
+.g-ml0{margin-left:0;}
+.g-mr0{margin-right:0;}
+.g-mt0{margin-top:0;}
+.g-mb0{margin-bottom:0}
+
+.g-ml3{margin-left:3px;}
+.g-ml5{margin-left:5px;}
+.g-ml10{margin-left:10px;}
+.g-ml15{margin-left:15px;}
+.g-ml20{margin-left:20px;}
+.g-ml25{margin-left:25px;}
+.g-ml30{margin-left:30px;}
+
+.g-mt3{margin-top:3px;}
+.g-mt5{margin-top:5px;}
+.g-mt10{margin-top:10px;}
+.g-mt15{margin-top:15px;}
+.g-mt20{margin-top:20px;}
+.g-mt25{margin-top:25px;}
+.g-mt30{margin-top:30px;}
+
+.g-mr3{margin-right:3px;}
+.g-mr5{margin-right:5px;}
+.g-mr10{margin-right:10px;}
+.g-mr15{margin-right:15px;}
+.g-mr20{margin-right:20px;}
+.g-mr25{margin-right:25px;}
+.g-mr30{margin-right:30px;}
+
+/**
+ * 内边距
+ */
+.g-p0{padding:0;}
+.g-pl0{padding-left:0;}
+.g-pr0{padding-right:0;}
+.g-pt0{padding-top:0;}
+.g-pb0{padding-bottom:0}
+
+.g-p5{padding: 5px}
+.g-p10{padding: 10px}
+.g-p15{padding: 15px}
+.g-p20{padding: 20px}
+.g-p25{padding: 25px}
+.g-p30{padding: 30px}
+.g-p40{padding: 40px}
+
+.g-pl3{padding-left:3px;}
+.g-pl5{padding-left:5px;}
+.g-pl10{padding-left:10px;}
+.g-pl15{padding-left:15px;}
+.g-pl20{padding-left:20px;}
+.g-pl25{padding-left:25px;}
+.g-pl30{padding-left:30px;}
+
+.g-pt3{padding-top:3px;}
+.g-pt5{padding-top:5px;}
+.g-pt10{padding-top:10px;}
+.g-pt15{padding-top:15px;}
+.g-pt20{padding-top:20px;}
+.g-pt25{padding-top:25px;}
+.g-pt30{padding-top:30px;}
+
+.g-pr3{padding-right:3px;}
+.g-pr5{padding-right:5px;}
+.g-pr10{padding-right:10px;}
+.g-pr15{padding-right:15px;}
+.g-pr20{padding-right:20px;}
+.g-pr25{padding-right:25px;}
+.g-pr30{padding-right:30px;}
+
+.g-pb3{padding-bottom:3px;}
+.g-pb5{padding-bottom:5px;}
+.g-pb10{padding-bottom:10px;}
+.g-pb15{padding-bottom:15px;}
+.g-pb20{padding-bottom:20px;}
+.g-pb25{padding-bottom:25px;}
+.g-pb30{padding-bottom:30px;}
