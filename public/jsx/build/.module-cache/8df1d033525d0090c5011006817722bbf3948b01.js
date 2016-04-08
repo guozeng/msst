@@ -1,3 +1,0 @@
-var Test = React.CreateClass({
-	
-});
