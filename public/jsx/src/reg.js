@@ -1,10 +1,10 @@
-var BtInput = React.createClass({
+/*var BtInput = React.createClass({
 	handleBlur: function (event) {
 		var DOMNode = this.refs.input.getDOMNode()
 		var idstr = this.props.id
 		var flag = true
 		var val = DOMNode.value.trim()
-		
+
 		if (val.length === 0) {
 			return
 		}
@@ -12,7 +12,7 @@ var BtInput = React.createClass({
 		if (idstr === 'email') {
 			flag =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(val)
 		} else if (idstr === 'passwd') {
-
+			flag = /^\w{6,16}$/.test(val)
 		} else if (idstr === 'passwd2') {
 
 		}
@@ -60,7 +60,92 @@ var BtInput = React.createClass({
 							  '<div class="popover-content cred"></div></div>'
 		})
 	}
-});
+});*/
+var BootInput = React.createClass({
+	getInitialState: function () {
+		return {
+			errTip: 'ssasa'
+		}
+	},
+	handleBlur: function (event) {
+		var DOMNode = this.refs.input.getDOMNode()
+		var verifyFn =  this.props.verifyFn
+		if (verifyFn) {
+			this.setState({
+				errTip: '邮箱格式不正确'
+			})
+			verifyFn.call(null, DOMNode, this)
+		}
+	},
+	handleFocus: function (event) {
+		var DOMNode = this.refs.input.getDOMNode()
+		$(DOMNode).popover('hide')
+	},
+	render: function () {
+		return (
+			<div className="form-group">
+			    <label htmlFor={this.props.id}>{this.props.label}</label>
+			    <input type={this.props.type} 
+			    			 className="form-control" 
+			    			 id={this.props.id}
+			    			 ref = "input"
+			    			 onBlur={this.handleBlur}
+			    			 onFocus={this.handleFocus}
+			    			 placeholder={this.props.placeholder} />
+			</div>
+		)
+	},
+	componentDidMount: function () {
+		var DOMInput = this.refs.input.getDOMNode()
+		// 初始化提示框
+		$(DOMInput).popover({
+			content: this.state.errTip,
+			trigger: 'manual',
+			placement: 'left',
+			template: '<div class="popover" role="tooltip">' +
+							  '<div class="arrow"></div><h3 class="popover-title"></h3>' +
+							  '<div class="popover-content cred"></div></div>'
+		})
+	}
+})
+
+var EmailInput = React.createClass({
+	verifyFn: function (DOMInput, child) {
+		var $input = $(DOMInput)
+
+		$input.popover({
+			content: 'emial'
+		})
+		$input.popover('show')
+	},
+	render: function () {
+		return (
+			<BootInput id="email" 
+								 label="邮箱地址" 
+								 type="email"
+								 verifyFn={this.verifyFn} 
+								 placeholder="请输入您常用的邮箱地址" />
+		)
+	},
+	componentDidMount: function () {
+	}
+})
+
+var PasswdInput = React.createClass({
+	render: function () {
+		return (
+			<BootInput id="passwd" label="密码" type="password" placeholder="6-16位的字母数字下划线" />
+		)
+	}
+})
+
+var Passwd2Input = React.createClass({
+	render: function () {
+		return (
+			<BootInput id="passwd2" label="确认密码" type="password" placeholder="确认您刚才输入的密码" />
+		)
+	}
+})
 
 var Vcode = React.createClass({
 	changeVcode: function (event) {
@@ -96,9 +181,9 @@ var RegForm = React.createClass({
 	render: function () {
 		return (
 			<form>
-				<BtInput id="email" label="邮箱地址" type="email" placeholder="请输入您常用的邮箱地址" />
-				<BtInput id="passwd" label="密码" type="password" placeholder="6-16位的字母数字下划线" />
-				<BtInput id="passwd2" label="确认密码" type="password" placeholder="确认您刚才输入的密码" />
+				<EmailInput />
+				<PasswdInput />
+				<Passwd2Input />
 				<Vcode />
 				<SubmitBtn />
 			</form>
