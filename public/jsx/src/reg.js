@@ -64,7 +64,7 @@
 var BootInput = React.createClass({
 	getInitialState: function () {
 		return {
-			errTip: 'ssasa'
+			errTip: ''
 		}
 	},
 	handleBlur: function (event) {
@@ -91,6 +91,7 @@ var BootInput = React.createClass({
 			    			 ref = "input"
 			    			 onBlur={this.handleBlur}
 			    			 onFocus={this.handleFocus}
+			    			 data-content={this.state.errTip}
 			    			 placeholder={this.props.placeholder} />
 			</div>
 		)
@@ -99,7 +100,7 @@ var BootInput = React.createClass({
 		var DOMInput = this.refs.input.getDOMNode()
 		// 初始化提示框
 		$(DOMInput).popover({
-			content: this.state.errTip,
+			// content: this.state.errTip,
 			trigger: 'manual',
 			placement: 'left',
 			template: '<div class="popover" role="tooltip">' +
@@ -112,10 +113,6 @@ var BootInput = React.createClass({
 var EmailInput = React.createClass({
 	verifyFn: function (DOMInput, child) {
 		var $input = $(DOMInput)
-
-		$input.popover({
-			content: 'emial'
-		})
 		$input.popover('show')
 	},
 	render: function () {
