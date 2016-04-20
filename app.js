@@ -1,6 +1,6 @@
 var express = require('express')
 var path = require('path')
-var routes = require('./routes')
+var autoroute = require('./autoroute')
 
 var app = express()
 
@@ -11,7 +11,7 @@ app.engine('.html', require( 'ejs' ).__express)
 app.use(express.static(path.join(__dirname, 'public')))
 
 // routes
-routes(app)
+autoroute(app)
 
 app.get('*', function (req, res) {
 	res.send('404 not found')

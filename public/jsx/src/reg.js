@@ -70,6 +70,7 @@ var BootInput = React.createClass({
 	handleBlur: function (event) {
 		var DOMNode = this.refs.input.getDOMNode()
 		var verifyFn =  this.props.verifyFn
+		debugger
 		if (verifyFn) {
 			this.setState({
 				errTip: '邮箱格式不正确'
@@ -86,13 +87,13 @@ var BootInput = React.createClass({
 			<div className="form-group">
 			    <label htmlFor={this.props.id}>{this.props.label}</label>
 			    <input type={this.props.type} 
-			    			 className="form-control" 
-			    			 id={this.props.id}
-			    			 ref = "input"
-			    			 onBlur={this.handleBlur}
-			    			 onFocus={this.handleFocus}
-			    			 data-content={this.state.errTip}
-			    			 placeholder={this.props.placeholder} />
+    			 className="form-control" 
+    			 id={this.props.id}
+    			 ref = "input"
+    			 onBlur={this.handleBlur}
+    			 onFocus={this.handleFocus}
+    			 data-content={this.state.errTip}
+    			 placeholder={this.props.placeholder} />
 			</div>
 		)
 	},
@@ -104,8 +105,8 @@ var BootInput = React.createClass({
 			trigger: 'manual',
 			placement: 'left',
 			template: '<div class="popover" role="tooltip">' +
-							  '<div class="arrow"></div><h3 class="popover-title"></h3>' +
-							  '<div class="popover-content cred"></div></div>'
+					  '<div class="arrow"></div><h3 class="popover-title"></h3>' +
+					  '<div class="popover-content cred"></div></div>'
 		})
 	}
 })
@@ -118,10 +119,10 @@ var EmailInput = React.createClass({
 	render: function () {
 		return (
 			<BootInput id="email" 
-								 label="邮箱地址" 
-								 type="email"
-								 verifyFn={this.verifyFn} 
-								 placeholder="请输入您常用的邮箱地址" />
+			 label="邮箱地址" 
+			 type="email"
+			 verifyFn={this.verifyFn}
+			 placeholder="请输入您常用的邮箱地址" />
 		)
 	},
 	componentDidMount: function () {
@@ -146,7 +147,7 @@ var Passwd2Input = React.createClass({
 
 var Vcode = React.createClass({
 	changeVcode: function (event) {
-		this.refs.vimg.getDOMNode().src = "/reg/vcode?t=" + new Date().getTime()
+		this.refs.vimg.getDOMNode().src = "/common/vcode?t=" + new Date().getTime()
 	},
 	render: function () {
 		return (
@@ -159,7 +160,7 @@ var Vcode = React.createClass({
 			      <a href="javascript:;" 
 			      	 title="点击换一个" 
 			      	 className="g-fr reg-vcode"
-			      	 onClick={this.changeVcode}><img ref="vimg" src="/reg/vcode" /></a>
+			      	 onClick={this.changeVcode}><img ref="vimg" src="/common/vcode" /></a>
 			    </div>
 			</div>
 		);

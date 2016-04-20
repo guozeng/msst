@@ -1,4 +1,4 @@
-var seccode = require('../modules/seccode')
+/*var seccode = require('../modules/seccode')
 
 function page (req, res, next) {
 	res.render('reg', {title: '用户登录'})
@@ -9,4 +9,8 @@ function vcode (req, res, next) {
 }
 
 exports.page = page
-exports.vcode = vcode
+exports.vcode = vcode*/
+
+module.exports = function (req, res, next) {
+	res.render('reg', {title: '用户登录'})
+}
